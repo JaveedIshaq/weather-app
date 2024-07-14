@@ -27,7 +27,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _textController = TextEditingController();
 
-  String get _text => _textController.text;
+  String get _text => _textController.text.trim();
 
   @override
   void dispose() {
@@ -45,6 +45,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
       body: Column(
         children: [
+          
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Row(

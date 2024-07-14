@@ -6,6 +6,7 @@ class WeatherLoading extends StatelessWidget {
   const WeatherLoading({super.key});
 
   @override
+  // Builds the widget tree for displaying a loading screen with a weather icon and text.
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Column(
