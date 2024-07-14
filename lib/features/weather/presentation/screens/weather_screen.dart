@@ -1,0 +1,84 @@
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weatherapp/app/core/cubit/base_cubit.dart';
+import 'package:weatherapp/app/core/injection/injection.dart';
+import 'package:weatherapp/features/theme/cubit/theme_cubit.dart';
+import 'package:weatherapp/features/weather/presentation/cubit/weather_cubit.dart';
+import 'package:weatherapp/features/weather/presentation/screens/search_screen.dart';
+import 'package:weatherapp/features/weather/presentation/views/weather_view.dart';
+
+class WeatherScreen extends StatefulWidget {
+  const WeatherScreen({super.key});
+
+  @override
+  State<WeatherScreen> createState() => _WeatherScreenState();
+}
+
+class _WeatherScreenState extends State<WeatherScreen> {
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocListener<WeatherCubit, WeatherState>(
+      bloc: getIt<WeatherCubit>(),
+      listener: (context, state) {
+        if (state.submitStatus == RequestStatus.success) {
+          getIt<ThemeCubit>().onUpdateTheme(state.weatherEntity);
+        }
+      },
+      child: BlocBuilder<WeatherCubit, WeatherState>(
+        bloc: getIt<WeatherCubit>(),
+        builder: (context, state) {
+          return Scaffold(
+            body: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Stack(
+                children: [
+                  WeatherView(
+                    onRefresh: () =>
+                        getIt<WeatherCubit>().onRefreshWeatherData(),
+                    submitStatus: state.submitStatus,
+                    weatherEntity: state.weatherEntity,
+                    locationEntity: state.locationEntity,
+                  ),
+                  Positioned(
+                    right: 30,
+                    top: 30,
+                    child: DropdownButton<Locale>(
+                      value: context.locale,
+                      onChanged: (Locale? value) {
+                        if (value == null) return;
+                        setState(() {
+                          context.setLocale(value);
+                        });
+                      },
+                      items: context.supportedLocales.map((Locale locale) {
+                        return DropdownMenuItem<Locale>(
+                          value: locale,
+                          child: Text(locale.languageCode),
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            floatingActionButton: FloatingActionButton(
+              child: const Icon(Icons.search, semanticLabel: 'Search'),
+              onPressed: () async {
+                final city =
+                    await Navigator.of(context).push(SearchScreen.route());
+                if (!context.mounted) return;
+                await getIt<WeatherCubit>().onFetchWeather(city);
+              },
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
