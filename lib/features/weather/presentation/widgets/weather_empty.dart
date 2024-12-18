@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:weatherapp/features/theme/theme.dart';
 import 'package:weatherapp/generated/locale_keys.g.dart';
 
 class WeatherEmpty extends StatelessWidget {
@@ -14,9 +15,10 @@ class WeatherEmpty extends StatelessWidget {
         const Text('🏙️', style: TextStyle(fontSize: 64)),
         Text(
           LocaleKeys.pleaseSelectCity.tr(),
-          style: theme.textTheme.headlineSmall,
+          style: fontL(22, color: theme.colorScheme.onSurface),
         ),
       ],
     );
   }
 }
+//

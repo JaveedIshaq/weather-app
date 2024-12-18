@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weatherapp/app/core/cubit/base_cubit.dart';
 import 'package:weatherapp/app/core/injection/injection.dart';
+import 'package:weatherapp/features/common/presentation/widgets/theme_toggle_button.dart';
 import 'package:weatherapp/features/theme/cubit/theme_cubit.dart';
 import 'package:weatherapp/features/weather/presentation/cubit/weather_cubit.dart';
 import 'package:weatherapp/features/weather/presentation/screens/search_screen.dart';
@@ -27,44 +28,51 @@ class _WeatherScreenState extends State<WeatherScreen> {
       bloc: getIt<WeatherCubit>(),
       listener: (context, state) {
         if (state.submitStatus == RequestStatus.success) {
-          getIt<ThemeCubit>().onUpdateTheme(state.weatherEntity);
+          getIt<ThemeCubit>().toggleTheme();
         }
       },
       child: BlocBuilder<WeatherCubit, WeatherState>(
         bloc: getIt<WeatherCubit>(),
         builder: (context, state) {
           return Scaffold(
-            body: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              child: Stack(
-                children: [
-                  WeatherView(
-                    onRefresh: () =>
-                        getIt<WeatherCubit>().onRefreshWeatherData(),
-                    submitStatus: state.submitStatus,
-                    weatherEntity: state.weatherEntity,
-                    locationEntity: state.locationEntity,
-                  ),
-                  Positioned(
-                    right: 30,
-                    top: 30,
-                    child: DropdownButton<Locale>(
-                      value: context.locale,
-                      onChanged: (Locale? value) {
-                        if (value == null) return;
-                        setState(() {
-                          context.setLocale(value);
-                        });
-                      },
-                      items: context.supportedLocales.map((Locale locale) {
-                        return DropdownMenuItem<Locale>(
-                          value: locale,
-                          child: Text(locale.languageCode),
-                        );
-                      }).toList(),
+            body: SafeArea(
+              child: SizedBox(
+                height: MediaQuery.of(context).size.height,
+                child: Stack(
+                  children: [
+                    WeatherView(
+                      onRefresh: () =>
+                          getIt<WeatherCubit>().onRefreshWeatherData(),
+                      submitStatus: state.submitStatus,
+                      weatherEntity: state.weatherEntity,
+                      locationEntity: state.locationEntity,
                     ),
-                  ),
-                ],
+                    Positioned(
+                      left: 30,
+                      top: 30,
+                      child: ThemeToggleButton(),
+                    ),
+                    Positioned(
+                      right: 30,
+                      top: 30,
+                      child: DropdownButton<Locale>(
+                        value: context.locale,
+                        onChanged: (Locale? value) {
+                          if (value == null) return;
+                          setState(() {
+                            context.setLocale(value);
+                          });
+                        },
+                        items: context.supportedLocales.map((Locale locale) {
+                          return DropdownMenuItem<Locale>(
+                            value: locale,
+                            child: Text(locale.languageCode),
+                          );
+                        }).toList(),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
             floatingActionButton: FloatingActionButton(
