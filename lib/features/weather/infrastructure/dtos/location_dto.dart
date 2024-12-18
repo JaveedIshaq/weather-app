@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weatherapp/features/weather/domain/entities/location_entity.dart';
+import 'package:mobile/features/weather/domain/entities/location_entity.dart';
 
 part 'location_dto.g.dart';
 

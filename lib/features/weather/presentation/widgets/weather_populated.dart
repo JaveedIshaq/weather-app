@@ -1,11 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/app/core/animations/animated_slide_fadein.dart';
-import 'package:weatherapp/app/core/enum/weather_condition.dart';
-import 'package:weatherapp/features/common/presentation/widgets/vertical_space.dart';
-import 'package:weatherapp/features/weather/domain/entities/location_entity.dart';
-import 'package:weatherapp/features/weather/domain/entities/weather_entity.dart';
-import 'package:weatherapp/generated/locale_keys.g.dart';
+import 'package:mobile/app/core/animations/animated_slide_fadein.dart';
+import 'package:mobile/app/core/enum/weather_condition.dart';
+import 'package:mobile/features/common/presentation/widgets/vertical_space.dart';
+import 'package:mobile/features/weather/domain/entities/location_entity.dart';
+import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
+import 'package:mobile/generated/locale_keys.g.dart';
 
 class WeatherPopulated extends StatelessWidget {
   const WeatherPopulated({

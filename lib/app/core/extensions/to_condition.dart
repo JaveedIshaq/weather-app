@@ -1,4 +1,4 @@
-import 'package:weatherapp/app/core/enum/weather_condition.dart';
+import 'package:mobile/app/core/enum/weather_condition.dart';
 
 extension WeatherConditionX on int {
   WeatherCondition get toCondition {

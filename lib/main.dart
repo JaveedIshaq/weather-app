@@ -6,10 +6,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weatherapp/app/app.dart';
-import 'package:weatherapp/app/core/env/app_env.dart';
-import 'package:weatherapp/app/core/injection/injection.dart';
-import 'package:weatherapp/app/core/logger/logger.dart';
+import 'package:mobile/app/app.dart';
+import 'package:mobile/app/core/env/app_env.dart';
+import 'package:mobile/app/core/injection/injection.dart';
+import 'package:mobile/app/core/logger/logger.dart';
 
 void main() async {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

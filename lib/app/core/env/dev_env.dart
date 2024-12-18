@@ -1,6 +1,6 @@
 import 'package:envied/envied.dart';
-import 'package:weatherapp/app/core/env/app_env.dart';
-import 'package:weatherapp/app/core/env/app_env_fields.dart';
+import 'package:mobile/app/core/env/app_env.dart';
+import 'package:mobile/app/core/env/app_env_fields.dart';
 
 part 'dev_env.g.dart';
 

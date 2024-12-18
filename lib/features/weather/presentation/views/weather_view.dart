@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/app/core/cubit/base_cubit.dart';
-import 'package:weatherapp/features/weather/domain/entities/location_entity.dart';
-import 'package:weatherapp/features/weather/domain/entities/weather_entity.dart';
-import 'package:weatherapp/features/weather/presentation/widgets/weather_empty.dart';
-import 'package:weatherapp/features/weather/presentation/widgets/weather_error.dart';
-import 'package:weatherapp/features/weather/presentation/widgets/weather_loading.dart';
-import 'package:weatherapp/features/weather/presentation/widgets/weather_populated.dart';
+import 'package:mobile/app/core/cubit/base_cubit.dart';
+import 'package:mobile/features/weather/domain/entities/location_entity.dart';
+import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
+import 'package:mobile/features/weather/presentation/widgets/weather_empty.dart';
+import 'package:mobile/features/weather/presentation/widgets/weather_error.dart';
+import 'package:mobile/features/weather/presentation/widgets/weather_loading.dart';
+import 'package:mobile/features/weather/presentation/widgets/weather_populated.dart';
 
 class WeatherView extends StatelessWidget {
   const WeatherView({

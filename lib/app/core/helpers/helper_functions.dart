@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:weatherapp/app/core/extensions/log_extension.dart';
+import 'package:mobile/app/core/extensions/log_extension.dart';
 
 String formatDate(DateTime dateTime) {
   try {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:weatherapp/app/core/cubit/cubit.dart';
-import 'package:weatherapp/app/core/enum/weather_condition.dart';
-import 'package:weatherapp/features/weather/domain/entities/weather_entity.dart';
+import 'package:mobile/app/core/cubit/cubit.dart';
+import 'package:mobile/app/core/enum/weather_condition.dart';
+import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
 
 @lazySingleton
 class ThemeCubit extends BaseCubit<ThemeState> {

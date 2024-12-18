@@ -2,12 +2,12 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:weatherapp/app/core/env/app_env.dart';
-import 'package:weatherapp/app/core/extensions/log_extension.dart';
-import 'package:weatherapp/app/core/injection/injection.dart';
-import 'package:weatherapp/app/core/router/router.dart';
-import 'package:weatherapp/app/core/util/observer_utils.dart';
-import 'package:weatherapp/features/theme/cubit/theme_cubit.dart';
+import 'package:mobile/app/core/env/app_env.dart';
+import 'package:mobile/app/core/extensions/log_extension.dart';
+import 'package:mobile/app/core/injection/injection.dart';
+import 'package:mobile/app/core/router/router.dart';
+import 'package:mobile/app/core/util/observer_utils.dart';
+import 'package:mobile/features/theme/cubit/theme_cubit.dart';
 
 class MyApp extends StatefulWidget {
   const MyApp({super.key});

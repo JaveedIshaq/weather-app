@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:weatherapp/app/core/extensions/log_extension.dart';
-import 'package:weatherapp/app/core/network/network.dart';
-import 'package:weatherapp/features/weather/infrastructure/dtos/location_dto.dart';
-import 'package:weatherapp/features/weather/infrastructure/dtos/weather_dto.dart';
+import 'package:mobile/app/core/extensions/log_extension.dart';
+import 'package:mobile/app/core/network/network.dart';
+import 'package:mobile/features/weather/infrastructure/dtos/location_dto.dart';
+import 'package:mobile/features/weather/infrastructure/dtos/weather_dto.dart';
 
 /// Exception thrown when locationSearch fails.
 class LocationRequestFailure implements Exception {}

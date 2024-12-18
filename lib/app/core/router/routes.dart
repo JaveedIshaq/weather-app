@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:weatherapp/app/core/router/values.dart';
-import 'package:weatherapp/features/app/presentation/screens/splash_screen.dart';
-import 'package:weatherapp/features/weather/presentation/screens/weather_screen.dart';
+import 'package:mobile/app/core/router/values.dart';
+import 'package:mobile/features/app/presentation/screens/splash_screen.dart';
+import 'package:mobile/features/weather/presentation/screens/weather_screen.dart';
 
 Route<dynamic>? generateRoute(RouteSettings settings) {
   switch (settings.name) {

@@ -3,7 +3,7 @@
 import 'dart:convert';
 
 import 'package:dio/dio.dart';
-import 'package:weatherapp/app/core/logger/logger.dart';
+import 'package:mobile/app/core/logger/logger.dart';
 
 enum Level {
   BASIC,

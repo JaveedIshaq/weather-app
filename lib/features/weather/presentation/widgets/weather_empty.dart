@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:weatherapp/features/theme/theme.dart';
-import 'package:weatherapp/generated/locale_keys.g.dart';
+import 'package:mobile/features/theme/theme.dart';
+import 'package:mobile/generated/locale_keys.g.dart';
 
 class WeatherEmpty extends StatelessWidget {
   const WeatherEmpty({super.key});

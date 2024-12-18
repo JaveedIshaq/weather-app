@@ -1,8 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:json_annotation/json_annotation.dart';
-import 'package:weatherapp/app/core/enum/weather_condition.dart';
-import 'package:weatherapp/app/core/extensions/to_condition.dart';
-import 'package:weatherapp/features/weather/domain/entities/weather_entity.dart';
+import 'package:mobile/app/core/enum/weather_condition.dart';
+import 'package:mobile/app/core/extensions/to_condition.dart';
+import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
 
 part 'weather_dto.g.dart';
 

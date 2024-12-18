@@ -1,8 +1,8 @@
 import 'package:injectable/injectable.dart';
-import 'package:weatherapp/app/core/cubit/base_cubit.dart';
-import 'package:weatherapp/features/weather/domain/entities/location_entity.dart';
-import 'package:weatherapp/features/weather/domain/entities/weather_entity.dart';
-import 'package:weatherapp/features/weather/domain/repositories/weather_repository.dart';
+import 'package:mobile/app/core/cubit/base_cubit.dart';
+import 'package:mobile/features/weather/domain/entities/location_entity.dart';
+import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
+import 'package:mobile/features/weather/domain/repositories/weather_repository.dart';
 
 part 'weather_state.dart';
 
