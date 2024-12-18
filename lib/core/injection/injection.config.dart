@@ -12,11 +12,11 @@ import 'package:connectivity_plus/connectivity_plus.dart' as _i4;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:shared_preferences/shared_preferences.dart' as _i7;
-import 'package:mobile/app/core/network/network.dart' as _i8;
-import 'package:mobile/app/core/storage/secure_storage.dart' as _i5;
+import 'package:mobile/core/network/network.dart' as _i8;
+import 'package:mobile/core/storage/secure_storage.dart' as _i5;
 import 'package:mobile/features/common/presentation/cubit/network_cubit.dart'
     as _i3;
-import 'package:mobile/features/theme/cubit/theme_cubit.dart' as _i6;
+import 'package:mobile/core/theme/cubit/theme_cubit.dart' as _i6;
 import 'package:mobile/features/weather/domain/repositories/weather_repository.dart'
     as _i10;
 import 'package:mobile/features/weather/infrastructure/data_sources/weather_remote_data_source.dart'

@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:mobile/app/core/error/error.dart';
+import 'package:mobile/core/error/error.dart';
 import 'package:mobile/features/weather/infrastructure/dtos/location_dto.dart';
 import 'package:mobile/features/weather/infrastructure/dtos/weather_dto.dart';
 

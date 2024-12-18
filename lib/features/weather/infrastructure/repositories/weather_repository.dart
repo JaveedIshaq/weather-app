@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:mobile/app/core/error/error.dart';
+import 'package:mobile/core/error/error.dart';
 import 'package:mobile/features/weather/domain/repositories/weather_repository.dart';
 import 'package:mobile/features/weather/infrastructure/data_sources/weather_remote_data_source.dart';
 import 'package:mobile/features/weather/infrastructure/dtos/location_dto.dart';

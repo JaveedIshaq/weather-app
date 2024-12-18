@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/app/core/router/values.dart';
+import 'package:mobile/core/router/values.dart';
 import 'package:mobile/features/app/presentation/screens/splash_screen.dart';
 import 'package:mobile/features/weather/presentation/screens/weather_screen.dart';
 

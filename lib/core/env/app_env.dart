@@ -1,7 +1,7 @@
-import 'package:mobile/app/core/env/app_env_fields.dart';
-import 'package:mobile/app/core/env/dev_env.dart';
-import 'package:mobile/app/core/env/release_env.dart';
-import 'package:mobile/app/core/env/uat_env.dart';
+import 'package:mobile/core/env/app_env_fields.dart';
+import 'package:mobile/core/env/dev_env.dart';
+import 'package:mobile/core/env/release_env.dart';
+import 'package:mobile/core/env/uat_env.dart';
 
 abstract interface class AppEnv implements AppEnvFields {
   factory AppEnv() => _instance;

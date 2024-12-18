@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mobile/app/core/cubit/base_cubit.dart';
+import 'package:mobile/core/cubit/base_cubit.dart';
 import 'package:mobile/features/weather/domain/entities/location_entity.dart';
 import 'package:mobile/features/weather/domain/entities/weather_entity.dart';
 import 'package:mobile/features/weather/presentation/widgets/weather_empty.dart';

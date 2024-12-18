@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:mobile/app/core/enum/weather_condition.dart';
+import 'package:mobile/core/enum/weather_condition.dart';
 
 class WeatherEntity extends Equatable {
   final double temperature;

@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:mobile/app/core/animations/animated_slide_fadein.dart';
-import 'package:mobile/app/core/enum/weather_condition.dart';
+import 'package:mobile/core/animations/animated_slide_fadein.dart';
+import 'package:mobile/core/enum/weather_condition.dart';
 import 'package:mobile/features/common/presentation/widgets/vertical_space.dart';
 import 'package:mobile/features/weather/domain/entities/location_entity.dart';
 import 'package:mobile/features/weather/domain/entities/weather_entity.dart';

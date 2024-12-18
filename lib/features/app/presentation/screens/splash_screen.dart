@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:mobile/app/core/router/values.dart';
+import 'package:mobile/core/router/values.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

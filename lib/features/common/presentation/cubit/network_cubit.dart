@@ -1,5 +1,5 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
-import 'package:mobile/app/core/cubit/cubit.dart';
+import 'package:mobile/core/cubit/cubit.dart';
 
 @LazySingleton()
 class NetworkInfoCubit extends Cubit<ConnectivityResult> {

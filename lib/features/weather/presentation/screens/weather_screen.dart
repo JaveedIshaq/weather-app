@@ -1,10 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mobile/app/core/cubit/base_cubit.dart';
-import 'package:mobile/app/core/injection/injection.dart';
+import 'package:mobile/core/cubit/base_cubit.dart';
+import 'package:mobile/core/injection/injection.dart';
 import 'package:mobile/features/common/presentation/widgets/theme_toggle_button.dart';
-import 'package:mobile/features/theme/cubit/theme_cubit.dart';
+import 'package:mobile/core/theme/cubit/theme_cubit.dart';
 import 'package:mobile/features/weather/presentation/cubit/weather_cubit.dart';
 import 'package:mobile/features/weather/presentation/screens/search_screen.dart';
 import 'package:mobile/features/weather/presentation/views/weather_view.dart';

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:mobile/app/core/constants/storage.dart';
-import 'package:mobile/app/core/network/dio_request_logger.dart';
-import 'package:mobile/app/core/storage/secure_storage.dart';
+import 'package:mobile/core/constants/storage.dart';
+import 'package:mobile/core/network/dio_request_logger.dart';
+import 'package:mobile/core/storage/secure_storage.dart';
 
 @singleton
 class Network {

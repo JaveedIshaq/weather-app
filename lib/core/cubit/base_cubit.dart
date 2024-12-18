@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mobile/app/core/logger/logger.dart';
+import 'package:mobile/core/logger/logger.dart';
 
 abstract class BaseCubit<BaseState> extends Cubit<BaseState> {
   BaseCubit(super.state);
