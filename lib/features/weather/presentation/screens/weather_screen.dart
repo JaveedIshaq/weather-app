@@ -35,44 +35,45 @@ class _WeatherScreenState extends State<WeatherScreen> {
         bloc: getIt<WeatherCubit>(),
         builder: (context, state) {
           return Scaffold(
-            body: SafeArea(
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height,
-                child: Stack(
-                  children: [
-                    WeatherView(
-                      onRefresh: () =>
-                          getIt<WeatherCubit>().onRefreshWeatherData(),
-                      submitStatus: state.submitStatus,
-                      weatherEntity: state.weatherEntity,
-                      locationEntity: state.locationEntity,
-                    ),
-                    Positioned(
-                      left: 30,
-                      top: 30,
-                      child: ThemeToggleButton(),
-                    ),
-                    Positioned(
-                      right: 30,
-                      top: 30,
-                      child: DropdownButton<Locale>(
-                        value: context.locale,
-                        onChanged: (Locale? value) {
-                          if (value == null) return;
-                          setState(() {
-                            context.setLocale(value);
-                          });
-                        },
-                        items: context.supportedLocales.map((Locale locale) {
-                          return DropdownMenuItem<Locale>(
-                            value: locale,
-                            child: Text(locale.languageCode),
-                          );
-                        }).toList(),
+            body: SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: Stack(
+                children: [
+                  WeatherView(
+                    onRefresh: () =>
+                        getIt<WeatherCubit>().onRefreshWeatherData(),
+                    submitStatus: state.submitStatus,
+                    weatherEntity: state.weatherEntity,
+                    locationEntity: state.locationEntity,
+                  ),
+                  SafeArea(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          ThemeToggleButton(),
+                          DropdownButton<Locale>(
+                            value: context.locale,
+                            onChanged: (Locale? value) {
+                              if (value == null) return;
+                              setState(() {
+                                context.setLocale(value);
+                              });
+                            },
+                            items:
+                                context.supportedLocales.map((Locale locale) {
+                              return DropdownMenuItem<Locale>(
+                                value: locale,
+                                child: Text(locale.languageCode),
+                              );
+                            }).toList(),
+                          ),
+                        ],
                       ),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             floatingActionButton: FloatingActionButton(

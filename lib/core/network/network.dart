@@ -1,14 +1,19 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:flutter/material.dart';
 import 'package:mobile/core/constants/storage.dart';
 import 'package:mobile/core/network/dio_request_logger.dart';
+import 'package:mobile/core/network/network_exception.dart';
 import 'package:mobile/core/storage/secure_storage.dart';
 
 @singleton
 class Network {
   final SecureStorage _secureStorage;
+  final Connectivity _connectivity;
 
-  Network(this._secureStorage);
+  Network(this._secureStorage) : _connectivity = Connectivity();
 
   Dio? _dioWeather;
   Dio? _dioGeocoding;
@@ -43,18 +48,73 @@ class Network {
       ));
   }
 
-  Future<Response> post(String url, Object? data, {bool isWeather = true}) =>
-      _getDio(isWeather).post(url, data: data);
+  Future<bool> checkConnectivity() async {
+    final connectivityResult = await _connectivity.checkConnectivity();
+    final isConnected = connectivityResult.isNotEmpty &&
+        connectivityResult[0] != ConnectivityResult.none;
+
+    if (!isConnected) {
+      Fluttertoast.showToast(
+        msg: "No internet connection",
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        backgroundColor: Colors.red,
+        textColor: Colors.white,
+      );
+    }
+
+    return isConnected;
+  }
+
+  Future<Response> post(String url, Object? data,
+      {bool isWeather = true}) async {
+    if (!await checkConnectivity()) {
+      throw NetworkException.noInternet(
+        path: url,
+        method: 'POST',
+        data: data,
+        baseUrl: isWeather ? _baseUrlWeather : _baseUrlGeocoding,
+      ).toDioException();
+    }
+    return _getDio(isWeather).post(url, data: data);
+  }
 
   Future<Response> get(String url, Map<String, String> params,
-          {bool isWeather = true}) =>
-      _getDio(isWeather).get(url, queryParameters: params);
+      {bool isWeather = true}) async {
+    if (!await checkConnectivity()) {
+      throw NetworkException.noInternet(
+        path: url,
+        method: 'GET',
+        data: params,
+        baseUrl: isWeather ? _baseUrlWeather : _baseUrlGeocoding,
+      ).toDioException();
+    }
+    return _getDio(isWeather).get(url, queryParameters: params);
+  }
 
-  Future<Response> put(String url, Object? data, {bool isWeather = true}) =>
-      _getDio(isWeather).put(url, data: data);
+  Future<Response> put(String url, Object? data,
+      {bool isWeather = true}) async {
+    if (!await checkConnectivity()) {
+      throw NetworkException.noInternet(
+        path: url,
+        method: 'PUT',
+        data: data,
+        baseUrl: isWeather ? _baseUrlWeather : _baseUrlGeocoding,
+      ).toDioException();
+    }
+    return _getDio(isWeather).put(url, data: data);
+  }
 
   Future<Response<T>> request<T>(String url, String method, data,
       {bool isWeather = true}) async {
+    if (!await checkConnectivity()) {
+      throw NetworkException.noInternet(
+        path: url,
+        method: method,
+        data: data,
+        baseUrl: isWeather ? _baseUrlWeather : _baseUrlGeocoding,
+      ).toDioException();
+    }
     final response = await _getDio(isWeather).request<T>(
       url,
       data: data,
