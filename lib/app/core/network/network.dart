@@ -94,7 +94,7 @@ class Network {
       try {
         await _refreshAccessToken();
       } on DioException catch (_) {
-        // TODO Implement logout
+        // Implement logout
         return;
       }
       try {

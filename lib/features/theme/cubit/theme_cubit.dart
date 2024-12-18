@@ -27,8 +27,6 @@ extension WeatherColorExtension on WeatherEntity {
         return Colors.indigoAccent;
       case WeatherCondition.unknown:
         return ThemeCubit.defaultColor;
-      default:
-        return ThemeCubit.defaultColor;
     }
   }
 }

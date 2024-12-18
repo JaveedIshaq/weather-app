@@ -132,10 +132,10 @@ extension on Color {
     );
     final p = percent / 100;
     return Color.fromARGB(
-      alpha,
-      red + ((255 - red) * p).round(),
-      green + ((255 - green) * p).round(),
-      blue + ((255 - blue) * p).round(),
+      a.round(),
+      r.round() + ((255 - r) * p).round(),
+      g.round() + ((255 - g) * p).round(),
+      b.round() + ((255 - b) * p).round(),
     );
   }
 }

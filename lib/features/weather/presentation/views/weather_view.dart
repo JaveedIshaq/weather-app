@@ -46,8 +46,6 @@ class WeatherView extends StatelessWidget {
                   );
                 case RequestStatus.failure:
                   return const WeatherError();
-                default:
-                  return const SizedBox.shrink();
               }
             },
           ),

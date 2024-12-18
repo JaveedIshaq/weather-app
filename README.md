@@ -6,7 +6,7 @@ A new Flutter project.
 
 ```console
 Doctor summary (to see all details, run flutter doctor -v):
-[✓] Flutter (Channel stable, 3.22.2, on macOS 14.3 23D56 darwin-x64, locale en-PK)
+[✓] Flutter (Channel stable, 3.27.1, on macOS 14.3 23D56 darwin-x64, locale en-PK)
 [✓] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
 [✓] Xcode - develop for iOS and macOS (Xcode 15.4)
 [✓] Chrome - develop for the web

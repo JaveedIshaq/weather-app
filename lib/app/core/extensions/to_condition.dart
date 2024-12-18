@@ -1,6 +1,6 @@
 import 'package:weatherapp/app/core/enum/weather_condition.dart';
 
-extension on int {
+extension WeatherConditionX on int {
   WeatherCondition get toCondition {
     switch (this) {
       case 0:

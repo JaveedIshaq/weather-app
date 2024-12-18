@@ -23,7 +23,7 @@ class DefaultImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return path.contains(".svg")
         ? Container(
-            color: Colors.white.withOpacity(0),
+            color: Colors.white.withAlpha(0),
             child: SvgPicture.asset(
               path,
               fit: boxFit ?? BoxFit.contain,

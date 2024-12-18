@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 
@@ -27,7 +26,7 @@ class ConnectionUtil {
     if (connectivityResult.isNotEmpty &&
         (connectivityResult[0] == ConnectivityResult.mobile ||
             connectivityResult[0] == ConnectivityResult.wifi)) {
-      if (await InternetConnectionChecker().hasConnection) {
+      if (await InternetConnectionChecker.instance.hasConnection) {
         hasConnection = true;
       } else {
         hasConnection = false;

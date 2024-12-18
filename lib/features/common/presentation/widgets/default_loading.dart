@@ -28,7 +28,7 @@ class _DefaultLoadingState extends State<DefaultLoading> {
         width: 18,
         height: 18,
         child: CircularProgressIndicator(
-          backgroundColor: Colors.black.withOpacity(0.1),
+          backgroundColor: Colors.black.withAlpha(1),
           strokeWidth: widget.size,
           valueColor: AlwaysStoppedAnimation<Color>(
               widget.loadingColor ?? Colors.accents[0]),
